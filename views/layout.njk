@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block head %}
+    <header >
+        <div id="nav-links" class="animation-up">
+            <a href="">Teachers</a>
+            <a href="">Students</a>
+        </div>
+
+    </header>
+    {% endblock %}
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/animations.css">
+
+
+</head>
+
+<body>
+
+        {% block content%} {% endblock %}
+
+
+
+{% block footer%} {% endblock%}
+
+</body>
+<!-- target="_blank" -->
+
+</html>

@@ -1,0 +1,17 @@
+.animation-up {
+    animation-name: up;
+    animation-duration: 300ms;
+    animation-fill-mode: backwards;
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        /* Faz com que a foto apareça suavemente na tela*/
+        transform: translateY(10px);
+        /*Negativo para vir de cima pra baixo*/
+    }
+    to {
+        opacity: 1;
+    }
+}
