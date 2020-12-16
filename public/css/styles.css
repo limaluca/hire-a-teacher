@@ -18,6 +18,7 @@
     justify-content: center;
     align-items: center;
     padding: 4vh;
+    background-color: white;
 }
 
 #nav-links a {
@@ -56,8 +57,26 @@
     transition: width 200ms ease-in-out 200ms;
 }
 
-#front-page {
+body {
     margin: auto;
-    min-height: 88vh;
+    height: 990px;
     background: linear-gradient(-30.0deg, #929D9E 20%, #7F8688 66%) no-repeat
+}
+
+.card {
+    width: 800px;
+    height: 400px;
+    background-color: white;
+    /*espacamento e alinhado ao centro*/
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*sombra*/
+    box-shadow: 4px 4px 6px -2px black;
+}
+
+.avatar {
+    width: 400px;
+    height: 400px;
+    background: url(https://source.unsplash.com/random/500x500) no-repeat center center / cover;
 }

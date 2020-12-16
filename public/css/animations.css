@@ -4,6 +4,17 @@
     animation-fill-mode: backwards;
 }
 
+.animation-slow-up {
+    animation-name: up;
+    animation-duration: 400ms;
+    animation-fill-mode: backwards;
+    animation-delay: 100ms;
+    animation-timing-function: ease-out;
+}
+
+
+/* We can use the same animation and modify it using classes above */
+
 @keyframes up {
     from {
         opacity: 0;
