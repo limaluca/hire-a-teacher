@@ -2,7 +2,7 @@ const express = require('express');
 const routes = express.Router();
 
 routes.get("/", function(request, response) {
-    return response.send('index')
+    return response.render('teachers/index')
 })
 
 routes.get("/teachers", function(request, response) {
