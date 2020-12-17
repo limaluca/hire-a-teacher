@@ -77,7 +77,6 @@ body {
 
 .avatar {
     width: 400px;
-    background: url(https://source.unsplash.com/random/500x500) no-repeat center center / cover;
 }
 
 
@@ -105,7 +104,7 @@ body {
 }
 
 .details .item div:nth-child(1) {
-    margin-top: 12px;
+    margin-top: 8px;
     font-size: 12px;
     color: #777;
     letter-spacing: 1.4px;
@@ -118,7 +117,7 @@ body {
     margin-bottom: 4px;
 }
 
-.details .item div:nth-child(2) span {
+.details .item span {
     background-color: var(--terciary-color);
     padding: 8px 16px;
     border-radius: 20px;
