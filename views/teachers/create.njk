@@ -47,7 +47,14 @@
 
                   <div class="item">
                         <div>Grau de Escolaridade</div>
-                        <div>Superior</div>
+                        <div>
+                              <select name="schooling">
+                                    <option value="high_school">Ensino Médio</option>
+                                    <option value="college_degree" selected>Ensino Superior</option>
+                                    <option value="master_degree">Possui Mestrado</option>
+                                    <option value="doctor_degree">Possui Doutorado</option>
+                              </select>
+                        </div>
                   </div>
                   <div class="item">
                         <div>Tipo de aula</div>
@@ -57,10 +64,12 @@
                         </div>
                   </div>
                   <div class="item">
-                        <div>Acompanhamento</div>
+                        <div>Disciplinas Lecionadas</div>
                               <div>
-                                    <input type="text" 
+                                    <input 
+                                    type="text" 
                                     name="disciplines"
+                                    placeholder="Digite as disciplinas lecionadas separadas por vírgula"
                                     >
                               </div>
                   </div>

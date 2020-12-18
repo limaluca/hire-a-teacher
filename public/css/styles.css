@@ -133,3 +133,36 @@ body {
 .details .item span:nth-child(3) {
     margin-left: 20px;
 }
+
+
+/* forms */
+
+input {
+    width: 100%;
+    outline: none;
+    color: #777;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+input[type="radio"] {
+    width: initial;
+    margin-right: 8px;
+}
+
+input::placeholder,
+select {
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+}
+
+button {
+    padding: 16px 32px;
+    background-color: var(--secondary-color);
+    width: 100%;
+    margin-top: 16px;
+    font-weight: bold;
+    color: #777;
+    font-size: 12px;
+}
