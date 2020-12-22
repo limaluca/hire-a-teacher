@@ -16,7 +16,7 @@ exports.post = function(request, response) {
         }
     }
     let {
-        avatar_url: avatar,
+        avatar_url: avatar, //dessa forma podemos renomear as variaveis
         name,
         birth,
         schooling,
@@ -49,4 +49,20 @@ exports.post = function(request, response) {
             return response.redirect("/teachers")
         })
         // return response.send(request.body);
+}
+
+//SHOW //request.params.id
+exports.show = function(request, response) {
+    //destructuring
+    const { id } = request.params
+
+    const foundTeacher = data.teachers.find(function(teacher) {
+        if (teacher.id == id)
+            return response.redirect("/teachers/create")
+    })
+
+    if (!foundTeacher) {
+        return response.send("Instructor not found.")
+    }
+
 }

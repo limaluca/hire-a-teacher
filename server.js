@@ -6,6 +6,7 @@ const server = express();
 
 server.set('view engine', '.njk');
 
+//used when we use post
 server.use(express.urlencoded({ extended: true }));
 
 server.use(express.static('public'));

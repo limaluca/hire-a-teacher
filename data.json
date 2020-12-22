@@ -19,6 +19,16 @@
       "classes_type": "online",
       "disciplines": "Historia da arte",
       "created_at": 1608474641241
+    },
+    {
+      "id": 3,
+      "avatar": "https://t2.gstatic.com/images?q=tbn:ANd9GcQ0e3ekRawIrWSd10m1c5TTqPysao9y8os2vltjzZpsq5GZBKOEg6SbqIZNO-pv",
+      "name": "Gwen Stefani",
+      "birth": 305078400000,
+      "schooling": "master_degree",
+      "classes_type": "online",
+      "disciplines": "Singing, Compositions, Dancing",
+      "created_at": 1608642527709
     }
   ]
 }
