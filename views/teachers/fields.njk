@@ -16,7 +16,7 @@
                               type="text"
                               name="name"
                               placeholder="Nome do professor"
-                              value=" {{teacher.name}} "
+                              value=" {{teacher.name}}"
                               >
                         </div>
                         
@@ -51,16 +51,16 @@
                               <span><input 
                               type="radio" 
                               name="classes_type" 
-                              value="online"
-                              {% if teacher.classes_type == "online" %}
+                              value="Online"
+                              {% if teacher.classes_type == "Online" %}
                               checked
                               {% endif %}>À Distancia</span>
                               
                               <span><input 
                               type="radio" 
                               name="classes_type" 
-                              value="presential"
-                              {% if teacher.classes_type == "presential" %}
+                              value="Presencial"
+                              {% if teacher.classes_type == "Presencial" %}
                               checked
                               {% endif %}>Presencial</span>
                         </div>
@@ -77,4 +77,5 @@
                   </div>
 
 
-                  <button type="submit">Salvar</button>                                      
+                  <button type="submit">Salvar</button>      
+                  <button type="submit">Salvar</button>                                                                      

@@ -96,3 +96,57 @@ exports.edit = function(request, response) {
 
     return response.render("teachers/edit", { teacher })
 }
+
+//PUT / UPDATE
+
+exports.put = function(request, response) {
+
+    const { id } = request.body
+    let index = 0;
+
+    const foundTeacher = data.teachers.find(function(teacher, foundIndex) {
+        if (id == teacher.id) {
+            index = foundIndex
+            return true
+        }
+    });
+
+    if (!foundTeacher) return response.send("Instructor not found.");
+
+
+    const teacher = {
+        ...foundTeacher,
+        ...request.body, //dados novos atualizados do teacher
+        birth: Date.parse(request.body.birth)
+    }
+
+    data.teachers[index] = teacher;
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
+        if (err) return response.send("Writing file error")
+
+        return response.redirect(`/teachers/${id}`);
+    })
+}
+
+
+//DELETE
+
+exports.delete = function(request, response) {
+    const { id } = request.body
+
+    //novo array
+    //so vai pro novo array o que retornar true
+    const filteredTeachers = data.teachers.filter(function(teacher) {
+        return teacher.id != id
+
+    })
+
+    data.teachers = filteredTeachers;
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
+        if (err) return response.send("Writing file error")
+        return response.redirect("/teachers")
+    })
+
+}
