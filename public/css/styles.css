@@ -130,10 +130,6 @@ body {
     font-size: 12px;
 }
 
-.details .item span:nth-child(3) {
-    margin-left: 20px;
-}
-
 
 /* forms */
 
@@ -157,7 +153,8 @@ select {
     color: #999;
 }
 
-button {
+button,
+a.button {
     padding: 16px 32px;
     background-color: var(--secondary-color);
     width: 100%;
@@ -165,4 +162,12 @@ button {
     font-weight: bold;
     color: #777;
     font-size: 12px;
+}
+
+a.button {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    width: 93.5%;
 }

@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const data = require('./data.json')
+const { age } = require('./utils')
 
 // POST
 exports.post = function(request, response) {
@@ -24,8 +25,8 @@ exports.post = function(request, response) {
         disciplines
     } = request.body;
 
-    birth = Date.parse(request.body.birth);
-    const created_at = Date.now();
+    birth = Date.parse(birth);
+    created_at = Date.now();
     const id = Number(data.teachers.length + 1);
 
     //This order is the same on the data.json
@@ -57,12 +58,22 @@ exports.show = function(request, response) {
     const { id } = request.params
 
     const foundTeacher = data.teachers.find(function(teacher) {
-        if (teacher.id == id)
-            return response.redirect("/teachers/create")
-    })
+        return id == teacher.id
+    });
 
-    if (!foundTeacher) {
-        return response.send("Instructor not found.")
+    if (!foundTeacher) return response.send("Instructor not found.");
+
+
+
+    const teacher = {
+        //spread operator (everything else on the teacher)
+        ...foundTeacher,
+        birth: age(foundTeacher.birth),
+        schooling: "",
+        disciplines: foundTeacher.disciplines.split(","),
+        created_at: new Intl.DateTimeFormat("pt-BR").format(foundTeacher.created_at)
     }
+
+    return response.render("teachers/show", { teacher })
 
 }

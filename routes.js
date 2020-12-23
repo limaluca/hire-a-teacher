@@ -19,5 +19,9 @@ routes.post("/teachers", teachers.post)
 
 routes.get("/teachers/:id", teachers.show)
 
+routes.get("/teachers/:id/edit", function(request, response) {
+    return response.render("teachers/edit")
+})
+
 
 module.exports = routes;
