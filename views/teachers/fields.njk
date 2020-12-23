@@ -5,7 +5,8 @@
                               <input 
                               type="url" 
                               name="avatar_url"
-                              placeholder="https://">
+                              placeholder="https://"
+                              value="{{teacher.avatar}}">
                         </div>
 
                   <div class="item">
@@ -15,6 +16,7 @@
                               type="text"
                               name="name"
                               placeholder="Nome do professor"
+                              value=" {{teacher.name}} "
                               >
                         </div>
                         
@@ -26,6 +28,7 @@
                               <input 
                               type="date" 
                               name="birth"
+                              value= "{{teacher.birth}}"
                               >
                         </div>
                   </div>
@@ -38,14 +41,28 @@
                                     <option value="college_degree" selected>Ensino Superior</option>
                                     <option value="master_degree">Possui Mestrado</option>
                                     <option value="doctor_degree">Possui Doutorado</option>
+                                    
                               </select>
                         </div>
                   </div>
                   <div class="item">
                         <div>Tipo de aula</div>
                         <div>
-                              <span><input type="radio" name="classes_type" value="online" checked>À Distancia</span>
-                              <span><input type="radio" name="classes_type" value="presential">Presencial</span>
+                              <span><input 
+                              type="radio" 
+                              name="classes_type" 
+                              value="online"
+                              {% if teacher.classes_type == "online" %}
+                              checked
+                              {% endif %}>À Distancia</span>
+                              
+                              <span><input 
+                              type="radio" 
+                              name="classes_type" 
+                              value="presential"
+                              {% if teacher.classes_type == "presential" %}
+                              checked
+                              {% endif %}>Presencial</span>
                         </div>
                   </div>
                   <div class="item">
@@ -55,7 +72,7 @@
                                     type="text" 
                                     name="disciplines"
                                     placeholder="Digite as disciplinas lecionadas separadas por vírgula"
-                                    >
+                                    value=" {{teacher.disciplines}} ">
                               </div>
                   </div>
 
