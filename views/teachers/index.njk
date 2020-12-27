@@ -5,45 +5,34 @@
 {% endblock head %}
 
 {% block content %}
-      <div class="card animation-slow-up">
-            <section 
-class="avatar" style="background: url(https://source.unsplash.com/collection/4613144/500x500) no-repeat center center / cover;
-">
-            </section>
+<div class="card table-container animation-slow-up">
+      <table width="100%">
+        
+        <thead>
+            <tr>
+                <th>Professor</th>
+                <th>Disciplinas</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody> 
+        
+            {% for teacher in teachers %}
+                <tr>
+                    <td>
+                        <span style="background-image:url({{teacher.avatar}})"></span>                        
+                        {{teacher.name}}
+                    </td>
+                    <td>{{teacher.disciplines}}</td>
+                    <td><a href="/teachers/{{teacher.id}}">Ver</a></td>
+                </tr>
+            {% endfor %}
 
-            <section class="details" \>
-                  <h3>Detalhes</h3>
-                  <div class="item">
-                        <div>Nome</div>
-                        <div>Iza</div>
-                        
-                  </div>
-                  <div class="item">
-                        <div>Idade</div>
-                        <div>27</div>
-                  </div>
-                  <div class="item">
-                        <div>Grau de Escolaridade</div>
-                        <div>Superior</div>
-                  </div>
-                  <div class="item">
-                        <div>Tipo de aula</div>
-                        <div>À Distancia</div>
-                  </div>
-                  <div class="item">
-                        <div>Acompanhamento</div>
-                              <div>
-                                    <span>Matemática</span>
-                                    <span>Física Quântica</span>
-                              </div>
-                  </div>
-                  <div class="item">
-                        <div>Desde</div>
-                        <div>2017</div>
-                  </div>                                                                        
-            </section>
-      
-      </div>
+        </tbody>
+
+      </table>
+
+</div>
 
 
 

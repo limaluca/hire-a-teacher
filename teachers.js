@@ -4,6 +4,11 @@ const fs = require('fs');
 const data = require('./data.json')
 const { age, schooling, date } = require('./utils')
 
+
+exports.index = function(request, response) {
+    return response.render("teachers/index", { teachers: data.teachers })
+}
+
 // POST
 exports.post = function(request, response) {
     // arrays com as chaves do body
@@ -117,7 +122,8 @@ exports.put = function(request, response) {
     const teacher = {
         ...foundTeacher,
         ...request.body, //dados novos atualizados do teacher
-        birth: Date.parse(request.body.birth)
+        birth: Date.parse(request.body.birth),
+        id: Number(request.body.id) //Previnir do id ser transformado em string
     }
 
     data.teachers[index] = teacher;

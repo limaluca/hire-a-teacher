@@ -1,95 +1,25 @@
 {
   "teachers": [
     {
-      "id": 2,
-      "avatar": "https://source.unsplash.com/collection/8482417/500x500",
-      "name": "Jude Law",
-      "birth": 633916800000,
-      "schooling": "high_school",
-      "classes_type": "presential",
-      "disciplines": "Martial Arts",
-      "created_at": 1608726282430
-    },
-    {
-      "id": "3",
-      "avatar": "https://static.wikia.nocookie.net/hdm/images/7/71/MaryMalone-S2.jpg/revision/latest/top-crop/width/360/height/450?cb=20201211014640",
-      "name": "                  Mary Malone           ",
-      "birth": 314928000000,
+      "id": 4,
+      "avatar": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/his-dark-materials-james-mcavoy-1572825791.png?crop=1.00xw:0.892xh;0,0.0513xh&resize=1200:*",
+      "name": " Asriel Belacqua",
+      "birth": 310780800000,
       "schooling": "college_degree",
       "classes_type": "Presencial",
-      "disciplines": "                  Physics, Math, Catholic Methods, Practical Theology        ",
-      "created_at": 1608728610970,
-      "avatar_url": "https://static.wikia.nocookie.net/hdm/images/7/71/MaryMalone-S2.jpg/revision/latest/top-crop/width/360/height/450?cb=20201211014640"
-    },
-    {
-      "id": 4,
-      "avatar": "https://www.telegraph.co.uk/content/dam/news/2019/11/03/TELEMMGLPICT000214407620_trans_NvBQzQNjv4BqpVlberWd9EgFPZtcLiMQfyf2A9a6I9YchsjMeADBa08.jpeg",
-      "name": "Asriel Belacqua",
-      "birth": 153014400000,
-      "schooling": "doctor_degree",
-      "classes_type": "presential",
-      "disciplines": " Strategy, Fighting, Discoursing",
-      "created_at": 1608734850508
-    },
-    {
-      "id": 6,
-      "avatar": "https://www.telegraph.co.uk/content/dam/news/2019/11/03/TELEMMGLPICT000214407620_trans_NvBQzQNjv4BqpVlberWd9EgFPZtcLiMQfyf2A9a6I9YchsjMeADBa08.jpeg",
-      "name": " Asriel Belacquaaaa",
-      "birth": 153014400000,
-      "schooling": "college_degree",
-      "classes_type": "presential",
-      "disciplines": "  Strategy, Fighting, Discoursing ",
-      "created_at": 1608734911905
+      "disciplines": " Strategy, Fighting ",
+      "created_at": 1608734850508,
+      "avatar_url": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/his-dark-materials-james-mcavoy-1572825791.png?crop=1.00xw:0.892xh;0,0.0513xh&resize=1200:*"
     },
     {
       "id": 7,
-      "avatar": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/will-parry-1575374425.jpg?resize=480:*",
-      "name": "  Will Parry",
-      "birth": 925776000000,
+      "avatar": "https://screenfiction.org/content/image/0/51/989/acea4d03-full.webp",
+      "name": " Lyra Silvertongue",
+      "birth": 988934400000,
       "schooling": "high_school",
       "classes_type": "Presencial",
-      "disciplines": "  Kickboxing",
+      "disciplines": " Alithiometer Reading, Witchery",
       "created_at": 1608745022395
-    },
-    {
-      "id": 8,
-      "avatar": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/will-parry-1575374425.jpg?resize=480:*",
-      "name": "   Will Parry ",
-      "birth": 925776000000,
-      "schooling": "college_degree",
-      "classes_type": "Presencial",
-      "disciplines": "   Kickboxing ",
-      "created_at": 1608745155171
-    },
-    {
-      "id": 9,
-      "avatar": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/will-parry-1575374425.jpg?resize=480:*",
-      "name": "   Will Parri",
-      "birth": 925776000000,
-      "schooling": "college_degree",
-      "classes_type": "Presencial",
-      "disciplines": "   Kickboxing ",
-      "created_at": 1608745161475
-    },
-    {
-      "id": 10,
-      "avatar": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/will-parry-1575374425.jpg?resize=480:*",
-      "name": "   Will Parri",
-      "birth": 925776000000,
-      "schooling": "college_degree",
-      "classes_type": "Presencial",
-      "disciplines": "   Kickboxing ",
-      "created_at": 1608745164321
-    },
-    {
-      "id": 11,
-      "avatar": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/will-parry-1575374425.jpg?resize=480:*",
-      "name": "   Will Parri",
-      "birth": 925776000000,
-      "schooling": "college_degree",
-      "classes_type": "Presencial",
-      "disciplines": "   Kickboxing ",
-      "created_at": 1608747479266
     },
     {
       "id": 12,
@@ -99,6 +29,16 @@
       "schooling": "college_degree",
       "disciplines": "  Strategy, Fighting, Discoursing ",
       "created_at": 1608748966551
+    },
+    {
+      "id": 13,
+      "name": "  Jeff Bezos",
+      "birth": -307929600000,
+      "schooling": "college_degree",
+      "classes_type": "Presencial",
+      "disciplines": "  Marketing Skils  ",
+      "created_at": 1609021608423,
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Jeff_Bezos%27_iconic_laugh.jpg"
     }
   ]
 }
