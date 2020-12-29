@@ -1,0 +1,80 @@
+
+                  <div class="item">
+                        <div>Avatar URL</div>
+                        <div>
+                              <input 
+                              type="url" 
+                              name="avatar"
+                              placeholder="https://"
+                              value="{{teacher.avatar}}">
+                        </div>
+
+                  <div class="item">
+                        <div>Nome</div>
+                        <div>
+                              <input 
+                              type="text"
+                              name="name"
+                              placeholder="Nome do professor"
+                              value=" {{teacher.name}}"
+                              >
+                        </div>
+                        
+                  </div>
+
+                  <div class="item">
+                        <div>Data de nascimento</div>
+                        <div>
+                              <input 
+                              type="date" 
+                              name="birth"
+                              value= "{{teacher.birth}}"
+                              >
+                        </div>
+                  </div>
+
+                  <div class="item">
+                        <div>Grau de Escolaridade</div>
+                        <div>
+                              <select name="schooling">
+                                    <option value="high_school">Ensino Médio</option>
+                                    <option value="college_degree" selected>Ensino Superior</option>
+                                    <option value="master_degree">Possui Mestrado</option>
+                                    <option value="doctor_degree">Possui Doutorado</option>
+                                    
+                              </select>
+                        </div>
+                  </div>
+                  <div class="item">
+                        <div>Tipo de aula</div>
+                        <div>
+                              <span><input 
+                              type="radio" 
+                              name="classes_type" 
+                              value="Online"
+                              {% if teacher.classes_type == "Online" %}
+                              checked
+                              {% endif %}>À Distancia</span>
+                              
+                              <span><input 
+                              type="radio" 
+                              name="classes_type" 
+                              value="Presencial"
+                              {% if teacher.classes_type == "Presencial" %}
+                              checked
+                              {% endif %}>Presencial</span>
+                        </div>
+                  </div>
+                  <div class="item">
+                        <div>Disciplinas Lecionadas</div>
+                              <div>
+                                    <input 
+                                    type="text" 
+                                    name="disciplines"
+                                    placeholder="Digite as disciplinas lecionadas separadas por vírgula"
+                                    value=" {{teacher.disciplines}} ">
+                              </div>
+                  </div>
+                  
+
+                  <button type="submit">Salvar</button>      

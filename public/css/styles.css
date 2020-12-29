@@ -217,6 +217,13 @@ tbody tr td:first-child {
     align-items: center;
 }
 
+tbody tr td:nth-child(2) {
+    color: #777;
+    text-transform: uppercase;
+    font-size: 13px;
+    text-align: left;
+}
+
 tbody tr td:first-child span {
     width: 48px;
     height: 48px;

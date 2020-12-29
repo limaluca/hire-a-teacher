@@ -1,15 +1,14 @@
 //Exportando funcoes para POST, CREATE, DELETE
 
 const fs = require('fs');
-const data = require('./data.json')
-const { age, schooling, date } = require('./utils')
+const data = require('../data.json')
+const { age, schooling, date } = require('../utils')
 
 
 exports.index = function(request, response) {
-    return response.render("teachers/index", { teachers: data.teachers })
-}
-
-// POST
+        return response.render("students/index", { students: data.students })
+    }
+    // POST
 exports.post = function(request, response) {
     // arrays com as chaves do body
 
@@ -32,10 +31,10 @@ exports.post = function(request, response) {
 
     birth = Date.parse(birth);
     created_at = Date.now();
-    const id = Number(data.teachers.length + 1);
+    const id = Number(data.students.length + 1);
 
     //This order is the same on the data.json
-    data.teachers.push({
+    data.students.push({
         id,
         avatar,
         name,
@@ -52,107 +51,103 @@ exports.post = function(request, response) {
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
             if (err) return response.send("Write file error!")
 
-            return response.redirect("/teachers")
+            return response.redirect("/students")
         })
         // return response.send(request.body);
 }
+
 
 //SHOW //request.params.id
 exports.show = function(request, response) {
     //destructuring
     const { id } = request.params
 
-    const foundTeacher = data.teachers.find(function(teacher) {
-        return id == teacher.id
+    const foundstudent = data.students.find(function(student) {
+        return id == student.id
     });
 
-    if (!foundTeacher) return response.send("Instructor not found.");
+    if (!foundstudent) return response.send("Instructor not found.");
 
 
 
-    const teacher = {
-        //spread operator (everything else on the teacher)
-        ...foundTeacher,
-        birth: age(foundTeacher.birth),
-        schooling: schooling(foundTeacher.schooling),
-        disciplines: foundTeacher.disciplines.split(","),
-        created_at: new Intl.DateTimeFormat("en-US").format(foundTeacher.created_at)
+    const student = {
+        //spread operator (everything else on the student)
+        ...foundstudent,
+        birth: age(foundstudent.birth),
+        schooling: schooling(foundstudent.schooling),
+        created_at: new Intl.DateTimeFormat("en-US").format(foundstudent.created_at)
     }
 
-    return response.render("teachers/show", { teacher })
+    return response.render("students/show", { student })
 
 }
+
 
 //EDIT
 exports.edit = function(request, response) {
-    //destructuring again
-    const { id } = request.params
+        //destructuring again
+        const { id } = request.params
 
-    const foundTeacher = data.teachers.find(function(teacher) {
-        return id == teacher.id
-    });
+        const foundstudent = data.students.find(function(student) {
+            return id == student.id
+        });
 
-    if (!foundTeacher) return response.send("Instructor not found.");
+        if (!foundstudent) return response.send("Instructor not found.");
 
-    const teacher = {
-        ...foundTeacher,
-        birth: date(foundTeacher.birth)
+        const student = {
+            ...foundstudent,
+            birth: date(foundstudent.birth)
+        }
+
+        return response.render("students/edit", { student })
     }
-
-    return response.render("teachers/edit", { teacher })
-}
-
-//PUT / UPDATE
-
+    //PUT / UPDATE
 exports.put = function(request, response) {
 
     const { id } = request.body
     let index = 0;
 
-    const foundTeacher = data.teachers.find(function(teacher, foundIndex) {
-        if (id == teacher.id) {
+    const foundstudent = data.students.find(function(student, foundIndex) {
+        if (id == student.id) {
             index = foundIndex
             return true
         }
     });
 
-    if (!foundTeacher) return response.send("Instructor not found.");
+    if (!foundstudent) return response.send("Instructor not found.");
 
 
-    const teacher = {
-        ...foundTeacher,
-        ...request.body, //dados novos atualizados do teacher
+    const student = {
+        ...foundstudent,
+        ...request.body, //dados novos atualizados do student
         birth: Date.parse(request.body.birth),
         id: Number(request.body.id) //Previnir do id ser transformado em string
     }
 
-    data.teachers[index] = teacher;
+    data.students[index] = student;
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return response.send("Writing file error")
 
-        return response.redirect(`/teachers/${id}`);
+        return response.redirect(`/students/${id}`);
     })
 }
-
-
-//DELETE
 
 exports.delete = function(request, response) {
     const { id } = request.body
 
     //novo array
     //so vai pro novo array o que retornar true
-    const filteredTeachers = data.teachers.filter(function(teacher) {
-        return teacher.id != id
+    const filteredStudents = data.students.filter(function(student) {
+        return student.id != id
 
     })
 
-    data.teachers = filteredTeachers;
+    data.students = filteredStudents;
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return response.send("Writing file error")
-        return response.redirect("/teachers")
+        return response.redirect("/students")
     })
 
 }

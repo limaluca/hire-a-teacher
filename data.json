@@ -1,44 +1,44 @@
 {
-  "teachers": [
-    {
-      "id": 4,
-      "avatar": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/his-dark-materials-james-mcavoy-1572825791.png?crop=1.00xw:0.892xh;0,0.0513xh&resize=1200:*",
-      "name": " Asriel Belacqua",
-      "birth": 310780800000,
-      "schooling": "college_degree",
-      "classes_type": "Presencial",
-      "disciplines": " Strategy, Fighting ",
-      "created_at": 1608734850508,
-      "avatar_url": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/his-dark-materials-james-mcavoy-1572825791.png?crop=1.00xw:0.892xh;0,0.0513xh&resize=1200:*"
-    },
-    {
-      "id": 7,
-      "avatar": "https://screenfiction.org/content/image/0/51/989/acea4d03-full.webp",
-      "name": " Lyra Silvertongue",
-      "birth": 988934400000,
-      "schooling": "high_school",
-      "classes_type": "Presencial",
-      "disciplines": " Alithiometer Reading, Witchery",
-      "created_at": 1608745022395
-    },
-    {
-      "id": 12,
-      "avatar": "https://www.telegraph.co.uk/content/dam/news/2019/11/03/TELEMMGLPICT000214407620_trans_NvBQzQNjv4BqpVlberWd9EgFPZtcLiMQfyf2A9a6I9YchsjMeADBa08.jpeg",
-      "name": " Asriel Belacqua a",
-      "birth": 153014400000,
-      "schooling": "college_degree",
-      "disciplines": "  Strategy, Fighting, Discoursing ",
-      "created_at": 1608748966551
-    },
-    {
-      "id": 13,
-      "name": "  Jeff Bezos",
-      "birth": -307929600000,
-      "schooling": "college_degree",
-      "classes_type": "Presencial",
-      "disciplines": "  Marketing Skils  ",
-      "created_at": 1609021608423,
-      "avatar": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Jeff_Bezos%27_iconic_laugh.jpg"
-    }
-  ]
+    "students": [],
+    "teachers": [{
+            "id": 4,
+            "avatar": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/his-dark-materials-james-mcavoy-1572825791.png?crop=1.00xw:0.892xh;0,0.0513xh&resize=1200:*",
+            "name": " Asriel Belacqua",
+            "birth": 310780800000,
+            "schooling": "college_degree",
+            "classes_type": "Presencial",
+            "disciplines": " Strategy, Fighting ",
+            "created_at": 1608734850508,
+            "avatar_url": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/his-dark-materials-james-mcavoy-1572825791.png?crop=1.00xw:0.892xh;0,0.0513xh&resize=1200:*"
+        },
+        {
+            "id": 7,
+            "avatar": "https://screenfiction.org/content/image/0/51/989/acea4d03-full.webp",
+            "name": " Lyra Silvertongue",
+            "birth": 988934400000,
+            "schooling": "high_school",
+            "classes_type": "Presencial",
+            "disciplines": " Alithiometer Reading, Witchery",
+            "created_at": 1608745022395
+        },
+        {
+            "id": 12,
+            "avatar": "https://www.telegraph.co.uk/content/dam/news/2019/11/03/TELEMMGLPICT000214407620_trans_NvBQzQNjv4BqpVlberWd9EgFPZtcLiMQfyf2A9a6I9YchsjMeADBa08.jpeg",
+            "name": " Asriel Belacqua a",
+            "birth": 153014400000,
+            "schooling": "college_degree",
+            "disciplines": "  Strategy, Fighting, Discoursing ",
+            "created_at": 1608748966551
+        },
+        {
+            "id": 13,
+            "name": "  Jeff Bezos",
+            "birth": -307929600000,
+            "schooling": "college_degree",
+            "classes_type": "Presencial",
+            "disciplines": "  Marketing Skils  ",
+            "created_at": 1609021608423,
+            "avatar": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Jeff_Bezos%27_iconic_laugh.jpg"
+        }
+    ]
 }
