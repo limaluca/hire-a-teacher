@@ -4,6 +4,9 @@ const fs = require('fs');
 const data = require('../data.json')
 const { age, schooling, date } = require('../utils')
 
+exports.create = function(request, response) {
+    return response.render("teachers/create")
+}
 
 exports.index = function(request, response) {
         return response.render("teachers/index", { teachers: data.teachers })
@@ -64,7 +67,7 @@ exports.show = function(request, response) {
             return id == teacher.id
         });
 
-        if (!foundTeacher) return response.send("Instructor not found.");
+        if (!foundTeacher) return response.send("Teacher not found.");
 
 
 
@@ -89,7 +92,7 @@ exports.edit = function(request, response) {
             return id == teacher.id
         });
 
-        if (!foundTeacher) return response.send("Instructor not found.");
+        if (!foundTeacher) return response.send("Teacher not found.");
 
         const teacher = {
             ...foundTeacher,
@@ -111,7 +114,7 @@ exports.put = function(request, response) {
         }
     });
 
-    if (!foundTeacher) return response.send("Instructor not found.");
+    if (!foundTeacher) return response.send("Teacher not found.");
 
 
     const teacher = {

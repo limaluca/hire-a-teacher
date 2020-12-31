@@ -1,89 +1,89 @@
 //Exportando funcoes para POST, CREATE, DELETE
 
 const fs = require('fs');
-const data = require('../data.json')
+const data = require('../data.json') //Dois pontos para voltar duas pastas
 const { age, schooling, date } = require('../utils')
 
 
 exports.index = function(request, response) {
-        return response.render("students/index", { students: data.students })
+    return response.render("students/index", { students: data.students })
+}
+
+exports.create = function(request, response) {
+        return response.render("students/create")
     }
     // POST
 exports.post = function(request, response) {
-    // arrays com as chaves do body
+        // arrays com as chaves do body
 
-    const keys = Object.keys(request.body)
-        // Validando as chaves
+        const keys = Object.keys(request.body)
+            // Validando as chaves
 
-    for (key of keys) {
-        if (request.body[key] == "") {
-            return response.send("Por favor, preencha todos os campos")
+        for (key of keys) {
+            if (request.body[key] == "") {
+                return response.send("Por favor, preencha todos os campos")
+            }
         }
-    }
-    let {
-        avatar_url: avatar, //dessa forma podemos renomear as variaveis
-        name,
-        birth,
-        schooling,
-        classes_type,
-        disciplines
-    } = request.body;
+        let {
+            avatar_url: avatar, //dessa forma podemos renomear as variaveis
+            name,
+            birth,
+            schooling,
+            classes_type,
+            disciplines
+        } = request.body;
 
-    birth = Date.parse(birth);
-    created_at = Date.now();
-    const id = Number(data.students.length + 1);
+        birth = Date.parse(birth);
+        created_at = Date.now();
+        const id = Number(data.students.length + 1);
 
-    //This order is the same on the data.json
-    data.students.push({
-        id,
-        avatar,
-        name,
-        birth,
-        schooling,
-        classes_type,
-        disciplines,
-        created_at
-    })
-
-    // os args de writeFile: Local, coloca-se o data para o 
-    //formato JSON(null so pra pular e 2 eh o espaçamento no data.json)
-
-    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
-            if (err) return response.send("Write file error!")
-
-            return response.redirect("/students")
+        //This order is the same on the data.json
+        data.students.push({
+            id,
+            avatar,
+            name,
+            birth,
+            schooling,
+            classes_type,
+            disciplines,
+            created_at
         })
-        // return response.send(request.body);
-}
 
+        // os args de writeFile: Local, coloca-se o data para o 
+        //formato JSON(null so pra pular e 2 eh o espaçamento no data.json)
 
-//SHOW //request.params.id
-exports.show = function(request, response) {
-    //destructuring
-    const { id } = request.params
+        fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
+                if (err) return response.send("Write file error!")
 
-    const foundstudent = data.students.find(function(student) {
-        return id == student.id
-    });
-
-    if (!foundstudent) return response.send("Instructor not found.");
-
-
-
-    const student = {
-        //spread operator (everything else on the student)
-        ...foundstudent,
-        birth: age(foundstudent.birth),
-        schooling: schooling(foundstudent.schooling),
-        created_at: new Intl.DateTimeFormat("en-US").format(foundstudent.created_at)
+                return response.redirect("/students")
+            })
+            // return response.send(request.body);
     }
+    //SHOW //request.params.id
+exports.show = function(request, response) {
+        //destructuring
+        const { id } = request.params
 
-    return response.render("students/show", { student })
+        const foundstudent = data.students.find(function(student) {
+            return id == student.id
+        });
 
-}
+        if (!foundstudent) return response.send("Student not found.");
 
 
-//EDIT
+
+        const student = {
+            //spread operator (everything else on the student)
+            ...foundstudent,
+            birth: age(foundstudent.birth),
+            schooling: schooling(foundstudent.schooling),
+            created_at: new Intl.DateTimeFormat("en-US").format(foundstudent.created_at)
+        }
+
+        return response.render("students/show", { student })
+
+    }
+    //EDIT
 exports.edit = function(request, response) {
         //destructuring again
         const { id } = request.params
@@ -92,7 +92,7 @@ exports.edit = function(request, response) {
             return id == student.id
         });
 
-        if (!foundstudent) return response.send("Instructor not found.");
+        if (!foundstudent) return response.send("Student not found.");
 
         const student = {
             ...foundstudent,
@@ -114,7 +114,7 @@ exports.put = function(request, response) {
         }
     });
 
-    if (!foundstudent) return response.send("Instructor not found.");
+    if (!foundstudent) return response.send("Student not found.");
 
 
     const student = {

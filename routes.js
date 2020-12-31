@@ -6,11 +6,10 @@ const students = require('./controllers/students')
 
 
 
+// Teachers Routes
 routes.get("/", teachers.index)
 routes.get("/teachers", teachers.index)
-routes.get("/teachers/create", function(request, response) {
-    return response.render("teachers/create")
-})
+routes.get("/teachers/create", teachers.create)
 routes.post("/teachers", teachers.post)
 routes.get("/teachers/:id", teachers.show)
 routes.get("/teachers/:id/edit", teachers.edit)
@@ -18,24 +17,19 @@ routes.put("/teachers", teachers.put)
 routes.delete("/teachers", teachers.delete)
 
 
+
+
+// Students Routes
 routes.get("/", students.index)
-
 routes.get("/students", students.index)
-
-routes.get("/students/create", function(request, response) {
-        return response.render("students/create")
-    }) //depois mudar para chamar funcao do students. O mesmo pro teachers
-
+routes.get("/students/create", students.create)
 routes.post("/students", students.post)
-
-
 routes.get("/students/:id", students.show)
-
 routes.get("/students/:id/edit", students.edit)
-
 routes.put("/students", students.put)
-
 routes.delete("/students", students.delete)
+
+
 
 
 module.exports = routes;
