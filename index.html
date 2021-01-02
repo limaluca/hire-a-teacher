@@ -1,7 +1,31 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    {% block head %} {% endblock %}
+
+    <div id="nav-links" class="animation-up">
+        <a href="/teachers">Teachers</a>
+        <a href="/students">Students</a>
+    </div>
+
+
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="shortcut icon" href="favicon.png">
+
+
+
+</head>
+
+
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+    {% block content%} {% endblock %} {% block footer%} {% endblock%}
+    <script src="/scripts.js"></script>
 </body>
+<!-- target="_blank" -->
+
 </html>
