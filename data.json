@@ -1,44 +1,67 @@
 {
-    "students": [],
-    "teachers": [{
-            "id": 1,
-            "avatar": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/his-dark-materials-james-mcavoy-1572825791.png?crop=1.00xw:0.892xh;0,0.0513xh&resize=1200:*",
-            "name": " Asriel Belacqua",
-            "birth": 310780800000,
-            "schooling": "college_degree",
-            "classes_type": "Presencial",
-            "disciplines": " Strategy, Fighting ",
-            "created_at": 1608734850508,
-            "avatar_url": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/his-dark-materials-james-mcavoy-1572825791.png?crop=1.00xw:0.892xh;0,0.0513xh&resize=1200:*"
-        },
-        {
-            "id": 2,
-            "avatar": "https://screenfiction.org/content/image/0/51/989/acea4d03-full.webp",
-            "name": " Lyra Silvertongue",
-            "birth": 988934400000,
-            "schooling": "high_school",
-            "classes_type": "Presencial",
-            "disciplines": " Alithiometer Reading, Witchery",
-            "created_at": 1608745022395
-        },
-        {
-            "id": 3,
-            "avatar": "https://www.telegraph.co.uk/content/dam/news/2019/11/03/TELEMMGLPICT000214407620_trans_NvBQzQNjv4BqpVlberWd9EgFPZtcLiMQfyf2A9a6I9YchsjMeADBa08.jpeg",
-            "name": " Asriel Belacqua a",
-            "birth": 153014400000,
-            "schooling": "college_degree",
-            "disciplines": "  Strategy, Fighting, Discoursing ",
-            "created_at": 1608748966551
-        },
-        {
-            "id": 4,
-            "name": "  Jeff Bezos",
-            "birth": -307929600000,
-            "schooling": "college_degree",
-            "classes_type": "Presencial",
-            "disciplines": "  Marketing Skils  ",
-            "created_at": 1609021608423,
-            "avatar": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Jeff_Bezos%27_iconic_laugh.jpg"
-        }
-    ]
+  "students": [
+    {
+      "id": 1,
+      "name": "Stefani G.",
+      "avatar": "https://lh3.googleusercontent.com/proxy/Ea_zpMzQZB6bsinWjSPb1pHeux2eD1UtavbcRUWqZU0cSBGK7P8y0nPBdmjlk9hhItq16qkuT8ibDIVyyanwX3lZk3egS2DskGebij9qd0sW7cVM_IubQ-b9SpbrN6MxUURq8mc-v6CFhyVYHmz1aEWjP6s2DhaHkM9w4Yac-a2icbLIfq7grwRKmsvEgdBVqQ=s0-d",
+      "email": "g.stefanni@hotmail.com",
+      "birth": 536716800000,
+      "school_year": "junior",
+      "study_hours": "6"
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "avatar": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/his-dark-materials-james-mcavoy-1572825791.png?crop=1.00xw:0.892xh;0,0.0513xh&resize=1200:*",
+      "name": " Asriel Belacqua",
+      "birth": 310780800000,
+      "schooling": "college_degree",
+      "classes_type": "Presencial",
+      "disciplines": " Strategy, Fighting ",
+      "created_at": 1608734850508,
+      "avatar_url": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/his-dark-materials-james-mcavoy-1572825791.png?crop=1.00xw:0.892xh;0,0.0513xh&resize=1200:*"
+    },
+    {
+      "id": 2,
+      "avatar": "https://screenfiction.org/content/image/0/51/989/acea4d03-full.webp",
+      "name": " Lyra Silvertongue",
+      "birth": 988934400000,
+      "schooling": "high_school",
+      "classes_type": "Presencial",
+      "disciplines": " Alithiometer Reading, Witchery",
+      "created_at": 1608745022395
+    },
+    {
+      "id": 3,
+      "avatar": "https://www.telegraph.co.uk/content/dam/news/2019/11/03/TELEMMGLPICT000214407620_trans_NvBQzQNjv4BqpVlberWd9EgFPZtcLiMQfyf2A9a6I9YchsjMeADBa08.jpeg",
+      "name": " Asriel Belacqua a",
+      "birth": 153014400000,
+      "schooling": "college_degree",
+      "disciplines": "  Strategy, Fighting, Discoursing ",
+      "created_at": 1608748966551
+    },
+    {
+      "id": 4,
+      "name": "  Jeff Bezos",
+      "birth": -307929600000,
+      "schooling": "college_degree",
+      "classes_type": "Presencial",
+      "disciplines": "  Marketing Skils  ",
+      "created_at": 1609021608423,
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Jeff_Bezos%27_iconic_laugh.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Jane Austen",
+      "birth": 589161600000,
+      "created_at": 1609678336853
+    },
+    {
+      "id": 6,
+      "name": "Jane Austen",
+      "birth": 589161600000,
+      "created_at": 1609678427999
+    }
+  ]
 }

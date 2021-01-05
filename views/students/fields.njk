@@ -1,13 +1,14 @@
-
                   <div class="item">
                         <div>Avatar URL</div>
                         <div>
                               <input 
                               type="url" 
-                              name="avatar"
+                              name="avatar_url"
                               placeholder="https://"
-                              value="{{teacher.avatar}}">
+                              value="{{student.avatar}}"
+                              >
                         </div>
+                  </div>
 
                   <div class="item">
                         <div>Nome</div>
@@ -16,7 +17,7 @@
                               type="text"
                               name="name"
                               placeholder="Nome do Estudante"
-                              value=" {{teacher.name}}"
+                              value="{{student.name}}"
                               >
                         </div>
                         
@@ -28,7 +29,7 @@
                               <input 
                               type="email"
                               name="email"
-                              value=" {{teacher.name}}"
+                              value=" {{student.email}}"
                               >
                         </div>
                         
@@ -40,7 +41,7 @@
                               <input 
                               type="date" 
                               name="birth"
-                              value= "{{teacher.birth}}"
+                              value= "{{student.birth}}"
                               >
                         </div>
                   </div>
@@ -48,7 +49,7 @@
                   <div class="item">
                         <div>Ano em que o estudante está matriculado</div>
                         <div>
-                              <select name="school-year">
+                              <select name="school_year">
                                     <optgroup label="Ensino Fundamental">
                                           <option value="five">Quinto Ano</option>
                                           <option value="six" selected>Sexto Ano</option>
@@ -70,9 +71,9 @@
                               <div>
                                     <input 
                                     type="number" 
-                                    name="study-hours"
+                                    name="study_hours"
                                     placeholder="Indique a quantidade de horas de aulas particulares que você quer ter por semana"
-                                    value=" {{teacher.disciplines}} ">
+                                    value=" {{student.study_hours}} ">
                               </div>
                   </div>
                   

@@ -25,6 +25,20 @@ module.exports = {
         return graduation;
     },
 
+    school_year: function checkSchoolYear(school_year) {
+        let studentsYear = ""
+        if (school_year == "five") studentsYear = "Quinto Ano"
+        else if (school_year == "six") studentsYear = "Sexto Ano"
+        else if (school_year == "seven") studentsYear = "Setimo Ano"
+        else if (school_year == "eight") studentsYear = "Oitavo Ano"
+        else if (school_year == "nine") studentsYear = "Nono Ano"
+        else if (school_year == "freshmen") studentsYear = "1º Ano"
+        else if (school_year == "junior") studentsYear = "2º Ano"
+        else if (school_year == "senior") studentsYear = "3º Ano"
+
+        return studentsYear;
+    },
+
     date: function(timestamp) {
         const date = new Date(timestamp)
 

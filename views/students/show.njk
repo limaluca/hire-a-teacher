@@ -7,7 +7,7 @@
 {% block content %}
       <div class="card animation-slow-up">
             <section 
-class="avatar" style="background: url({{ teacher.avatar }}) no-repeat center center / cover;
+class="avatar" style="background: url({{ student.avatar }}) no-repeat center center / cover;
 ">
             </section>
 
@@ -15,36 +15,27 @@ class="avatar" style="background: url({{ teacher.avatar }}) no-repeat center cen
                   <h3>Detalhes</h3>
                   <div class="item">
                         <div>Nome</div>
-                        <div> {{teacher.name}} </div>
+                        <div> {{student.name}} </div>
                         
                   </div>
                   <div class="item">
                         <div>Idade</div>
-                        <div> {{teacher.birth}} </div>
+                        <div> {{student.birth}} </div>
                   </div>
                   <div class="item">
-                        <div>Grau de Escolaridade</div>
-                        <div> {{teacher.schooling}} </div>
+                        <div>Email</div>
+                        <div> {{student.email}} </div>
                   </div>
                   <div class="item">
-                        <div>Tipo de aula</div>
-                        <div> {{teacher.classes_type}} </div>
+                        <div>Ano Escolar</div>
+                        <div> {{student.school_year}} </div>
                   </div>
-                  <div class="item">
-                        <div>Acompanhamento</div>
 
-                              <div>
-                                    {% for discipline in teacher.disciplines %}
-                                          <span>{{ discipline }}</span>
-                                    {% endfor %}
-                              </div>
-                  </div>
-                  <div class="item">
-                        <div>Desde</div>
-                        <div>{{ teacher.created_at}}</div>
-                  </div>  
 
-                  <a href="/teachers/{{teacher.id}}/edit" class=button>Editar</a>      
+
+
+
+                  <a href="/students/{{student.id}}/edit" class=button>Editar</a>      
                                                                                   
             </section>
       

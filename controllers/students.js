@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const data = require('../data.json') //Dois pontos para voltar duas pastas
-const { age, schooling, date } = require('../utils')
+const { age, school_year } = require('../utils')
 
 
 exports.index = function(request, response) {
@@ -25,28 +25,34 @@ exports.post = function(request, response) {
             }
         }
         let {
-            avatar_url: avatar, //dessa forma podemos renomear as variaveis
+            //dessa forma podemos renomear as variaveis
+            avatar_url: avatar,
             name,
+            email,
             birth,
-            schooling,
-            classes_type,
-            disciplines
+            school_year,
+            study_hours,
         } = request.body;
 
         birth = Date.parse(birth);
-        created_at = Date.now();
-        const id = Number(data.students.length + 1);
+
+        let id = 1;
+        const lastStudent = data.students[data.students.length - 1]
+
+        if (lastStudent) {
+            id = lastStudent.id + 1
+        }
 
         //This order is the same on the data.json
         data.students.push({
             id,
-            avatar,
             name,
+            avatar,
+            email,
             birth,
-            schooling,
-            classes_type,
-            disciplines,
-            created_at
+            school_year,
+            study_hours,
+
         })
 
         // os args de writeFile: Local, coloca-se o data para o 
@@ -55,7 +61,7 @@ exports.post = function(request, response) {
         fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
                 if (err) return response.send("Write file error!")
 
-                return response.redirect("/students")
+                return response.redirect(`/students/${id}`)
             })
             // return response.send(request.body);
     }
@@ -76,8 +82,7 @@ exports.show = function(request, response) {
             //spread operator (everything else on the student)
             ...foundstudent,
             birth: age(foundstudent.birth),
-            schooling: schooling(foundstudent.schooling),
-            created_at: new Intl.DateTimeFormat("en-US").format(foundstudent.created_at)
+            school_year: school_year(foundstudent.school_year)
         }
 
         return response.render("students/show", { student })
