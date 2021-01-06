@@ -4,14 +4,15 @@ const fs = require('fs');
 const data = require('../data.json')
 const { age, schooling, date } = require('../utils')
 
+exports.index = function(request, response) {
+    return response.render("teachers/index", { teachers: data.teachers })
+}
+
 exports.create = function(request, response) {
     return response.render("teachers/create")
 }
 
-exports.index = function(request, response) {
-        return response.render("teachers/index", { teachers: data.teachers })
-    }
-    // POST
+// POST
 exports.post = function(request, response) {
         // arrays com as chaves do body
 
@@ -96,7 +97,7 @@ exports.edit = function(request, response) {
 
         const teacher = {
             ...foundTeacher,
-            birth: date(foundTeacher.birth)
+            birth: date(foundTeacher.birth).iso
         }
 
         return response.render("teachers/edit", { teacher })

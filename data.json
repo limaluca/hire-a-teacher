@@ -5,40 +5,61 @@
       "name": "Stefani G.",
       "avatar": "https://lh3.googleusercontent.com/proxy/Ea_zpMzQZB6bsinWjSPb1pHeux2eD1UtavbcRUWqZU0cSBGK7P8y0nPBdmjlk9hhItq16qkuT8ibDIVyyanwX3lZk3egS2DskGebij9qd0sW7cVM_IubQ-b9SpbrN6MxUURq8mc-v6CFhyVYHmz1aEWjP6s2DhaHkM9w4Yac-a2icbLIfq7grwRKmsvEgdBVqQ=s0-d",
       "email": "g.stefanni@hotmail.com",
-      "birth": 536716800000,
-      "school_year": "junior",
-      "study_hours": "6"
+      "birth": 565747200000,
+      "school_year": "eight",
+      "study_hours": "20",
+      "avatar_url": "https://lh3.googleusercontent.com/proxy/Ea_zpMzQZB6bsinWjSPb1pHeux2eD1UtavbcRUWqZU0cSBGK7P8y0nPBdmjlk9hhItq16qkuT8ibDIVyyanwX3lZk3egS2DskGebij9qd0sW7cVM_IubQ-b9SpbrN6MxUURq8mc-v6CFhyVYHmz1aEWjP6s2DhaHkM9w4Yac-a2icbLIfq7grwRKmsvEgdBVqQ=s0-d"
+    },
+    {
+      "id": 2,
+      "name": "Dani Bond",
+      "avatar": "https://escutai.com/wp-content/uploads/2019/06/Danny.jpg",
+      "email": "bond-dani007@gmai.com",
+      "birth": 565401600000,
+      "school_year": "six",
+      "study_hours": "10",
+      "avatar_url": "https://escutai.com/wp-content/uploads/2019/06/Danny.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Dua Lipa",
+      "avatar": "https://assets.papelpop.com/wp-content/uploads/2020/10/dua-lipa-1.jpg",
+      "email": "Lipa_dua@gmail.com",
+      "birth": 794188800000,
+      "school_year": "eight",
+      "study_hours": "30",
+      "avatar_url": "https://assets.papelpop.com/wp-content/uploads/2020/10/dua-lipa-1.jpg"
     }
   ],
   "teachers": [
     {
       "id": 1,
       "avatar": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/his-dark-materials-james-mcavoy-1572825791.png?crop=1.00xw:0.892xh;0,0.0513xh&resize=1200:*",
-      "name": " Asriel Belacqua",
+      "name": "Asriel Belacqua",
       "birth": 310780800000,
-      "schooling": "college_degree",
-      "classes_type": "Presencial",
-      "disciplines": " Strategy, Fighting ",
+      "schooling": "doctor_degree",
+      "classes_type": "Online",
+      "disciplines": "   Strategy, Fighting   ",
       "created_at": 1608734850508,
       "avatar_url": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/his-dark-materials-james-mcavoy-1572825791.png?crop=1.00xw:0.892xh;0,0.0513xh&resize=1200:*"
     },
     {
       "id": 2,
       "avatar": "https://screenfiction.org/content/image/0/51/989/acea4d03-full.webp",
-      "name": " Lyra Silvertongue",
+      "name": "  Lyra Silvertongue",
       "birth": 988934400000,
       "schooling": "high_school",
-      "classes_type": "Presencial",
-      "disciplines": " Alithiometer Reading, Witchery",
+      "classes_type": "Online",
+      "disciplines": "  Alithiometer Reading, Witchery ",
       "created_at": 1608745022395
     },
     {
       "id": 3,
       "avatar": "https://www.telegraph.co.uk/content/dam/news/2019/11/03/TELEMMGLPICT000214407620_trans_NvBQzQNjv4BqpVlberWd9EgFPZtcLiMQfyf2A9a6I9YchsjMeADBa08.jpeg",
-      "name": " Asriel Belacqua a",
+      "name": "    Asriel Belacqua a",
       "birth": 153014400000,
-      "schooling": "college_degree",
-      "disciplines": "  Strategy, Fighting, Discoursing ",
+      "schooling": "master_degree",
+      "disciplines": "     Strategy, Fighting, Discoursing    ",
       "created_at": 1608748966551
     },
     {
@@ -50,18 +71,6 @@
       "disciplines": "  Marketing Skils  ",
       "created_at": 1609021608423,
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Jeff_Bezos%27_iconic_laugh.jpg"
-    },
-    {
-      "id": 5,
-      "name": "Jane Austen",
-      "birth": 589161600000,
-      "created_at": 1609678336853
-    },
-    {
-      "id": 6,
-      "name": "Jane Austen",
-      "birth": 589161600000,
-      "created_at": 1609678427999
     }
   ]
 }

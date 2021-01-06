@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const data = require('../data.json') //Dois pontos para voltar duas pastas
-const { age, school_year } = require('../utils')
+const { age, school_year, date } = require('../utils')
 
 
 exports.index = function(request, response) {
@@ -81,7 +81,7 @@ exports.show = function(request, response) {
         const student = {
             //spread operator (everything else on the student)
             ...foundstudent,
-            birth: age(foundstudent.birth),
+            birth: date(foundstudent.birth).birthDay,
             school_year: school_year(foundstudent.school_year)
         }
 
@@ -101,7 +101,7 @@ exports.edit = function(request, response) {
 
         const student = {
             ...foundstudent,
-            birth: date(foundstudent.birth)
+            birth: date(foundstudent.birth).iso
         }
 
         return response.render("students/edit", { student })

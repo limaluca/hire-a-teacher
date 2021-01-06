@@ -133,7 +133,8 @@ body {
 
 /* forms */
 
-input {
+input,
+select {
     width: 100%;
     outline: none;
     color: #777;
@@ -247,7 +248,7 @@ tbody tr td:last-child a,
 
 .table-container thead tr th:last-child,
 td:last-child {
-    text-align: center;
+    text-align: left;
 }
 
 .table-container>a {

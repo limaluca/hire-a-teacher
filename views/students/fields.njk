@@ -51,16 +51,25 @@
                         <div>
                               <select name="school_year">
                                     <optgroup label="Ensino Fundamental">
-                                          <option value="five">Quinto Ano</option>
-                                          <option value="six" selected>Sexto Ano</option>
-                                          <option value="seven">Sétimo Ano</option>
-                                          <option value="eight">Oitavo Ano</option>
-                                          <option value="nine">Nono Ano</option>                                    
+                                    
+                                          <option value="five" {% if student.school_year=="five" %}selected
+                                          {% endif %}>Quinto Ano</option>
+                                          <option value="six" {% if student.school_year=="six" %}selected
+                                          {% endif %} selected>Sexto Ano</option>
+                                          <option value="seven" {% if student.school_year=="seven" %}selected
+                                          {% endif %} >Sétimo Ano</option>
+                                          <option value="eight" {% if student.school_year=="eight" %}selected
+                                          {% endif %} >Oitavo Ano</option>
+                                          <option value="nine" {% if student.school_year=="nine" %}selected
+                                          {% endif %} >Nono Ano</option>                                    
                                     </optgroup>
                                     <optgroup label="Ensino Médio">
-                                          <option value="freshmen">1º Ano </option>
-                                          <option value="junior">2º Ano</option>
-                                          <option value="senior">3º Ano</option>                                    
+                                          <option value="freshmen" {% if student.school_year=="freshmen" %}selected
+                                          {% endif %}>1º Ano </option>
+                                          <option value="junior" {% if student.school_year=="junior" %}selected
+                                          {% endif %}>2º Ano</option>
+                                          <option value="senior" {% if student.school_year=="senior" %}selected
+                                          {% endif %}>3º Ano</option>                                    
                                     </optgroup>
                               </select>
                         </div>
@@ -73,7 +82,7 @@
                                     type="number" 
                                     name="study_hours"
                                     placeholder="Indique a quantidade de horas de aulas particulares que você quer ter por semana"
-                                    value=" {{student.study_hours}} ">
+                                    value="{{student.study_hours}}">
                               </div>
                   </div>
                   
