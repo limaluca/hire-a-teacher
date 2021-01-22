@@ -1,6 +1,7 @@
-const db = require('../../../config/db')
+const { response } = require('express')
+const db = require('../../config/db')
 
-const { age, schooling, date } = require('../../../lib/utils')
+const { age, schooling, date } = require('../../lib/utils')
 
 
 module.exports = {
@@ -40,6 +41,17 @@ module.exports = {
         ]
         db.query(query, values, function(err, results) {
             if (err) return response.send("database error")
+
+            callback(results.rows[0])
+        })
+    },
+
+    find(id, callback) {
+        db.query(`
+        SELECT * 
+        FROM teachers 
+        WHERE id =$1`, [id], function(err, results) {
+            if (err) return response.send("Database error..")
 
             callback(results.rows[0])
         })

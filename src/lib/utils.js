@@ -15,7 +15,7 @@ module.exports = {
     },
 
 
-    schooling(schooling) {
+    check_education(schooling) {
         let graduation = ""
         if (schooling == "high_school") graduation = "Ensino Médio"
         else if (schooling == "college_degree") graduation = "Ensino Superior"
