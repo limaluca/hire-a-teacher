@@ -7,7 +7,7 @@
 {% block content %}
       <div class="card animation-slow-up">
             <section 
-class="avatar" style="background: url({{ teacher.avatar }}) no-repeat center center / cover;
+class="avatar" style="background: url({{ teacher.avatar_url }}) no-repeat center center / cover;
 ">
             </section>
 
@@ -20,22 +20,22 @@ class="avatar" style="background: url({{ teacher.avatar }}) no-repeat center cen
                   </div>
                   <div class="item">
                         <div>Idade</div>
-                        <div> {{teacher.birth}} </div>
+                        <div> {{teacher.birth_date}} </div>
                   </div>
                   <div class="item">
                         <div>Grau de Escolaridade</div>
-                        <div> {{teacher.schooling}} </div>
+                        <div> {{teacher.education_level}} </div>
                   </div>
                   <div class="item">
                         <div>Tipo de aula</div>
-                        <div> {{teacher.classes_type}} </div>
+                        <div> {{teacher.class_type}} </div>
                   </div>
                   <div class="item">
                         <div>Acompanhamento</div>
 
                               <div>
-                                    {% for discipline in teacher.disciplines %}
-                                          <span>{{ discipline }}</span>
+                                    {% for subject in teacher.subjects_taught %}
+                                          <span>{{ subject }}</span>
                                     {% endfor %}
                               </div>
                   </div>

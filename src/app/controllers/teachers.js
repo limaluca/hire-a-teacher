@@ -1,5 +1,5 @@
 const Teacher = require('../models/Teacher')
-const { date, check_education } = require('../../lib/utils')
+const { date, check_education, age } = require('../../lib/utils')
 
 module.exports = {
     index(request, response) {
@@ -36,12 +36,20 @@ module.exports = {
 
             teacher.education_level = check_education(teacher.education_level)
             teacher.subjects_taught = teacher.subjects_taught.split(",")
+            teacher.birth_date = age(teacher.birth_date)
+            teacher.created_at = date(teacher.created_at).format
 
             return response.render("teachers/show", { teacher })
         })
     },
     edit(request, response) {
-        return
+        Teacher.find(request.params.id, function(teacher) {
+            if (!teacher) return response.send("Teacher not found!!!!")
+            console.log(teacher.birth_date)
+            teacher.birth_date = date(teacher.birth_date).format
+
+            return response.render("teachers/edit", { teacher })
+        })
     },
     put(request, response) {
         const keys = Object.keys(request.body)
