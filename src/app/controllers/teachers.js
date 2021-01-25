@@ -37,7 +37,6 @@ module.exports = {
             teacher.education_level = check_education(teacher.education_level)
             teacher.subjects_taught = teacher.subjects_taught.split(",")
             teacher.birth_date = age(teacher.birth_date)
-            teacher.created_at = date(teacher.created_at).showing
 
             return response.render("teachers/show", { teacher })
         })
