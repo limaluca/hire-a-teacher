@@ -43,7 +43,14 @@ module.exports = {
         })
     },
     edit(request, response) {
-        return
+        Teacher.find(request.params.id, function(teacher) {
+            if (!teacher) return response.send("Teacher not found!!!!")
+
+            teacher.subjects_taught = teacher.subjects_taught.split(",")
+            teacher.birth_date = (date(teacher.birth_date)).iso
+
+            return response.render("teachers/edit", { teacher })
+        })
     },
     put(request, response) {
         const keys = Object.keys(request.body)
@@ -54,7 +61,13 @@ module.exports = {
                 return response.send("Por favor, preencha todos os campos")
             }
         }
-        return
+
+
+        Teacher.update(request.body, function() {
+            return response.redirect(`/teachers/${request.body.id}`)
+        })
+
+
     },
     delete(request, response) {
         return
