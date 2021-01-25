@@ -59,7 +59,8 @@
 
 body {
     margin: auto;
-    height: 700px;
+    min-height: 700px;
+    height: auto;
     background: linear-gradient(-30.0deg, #929D9E 20%, #7F8688 66%) no-repeat
 }
 
