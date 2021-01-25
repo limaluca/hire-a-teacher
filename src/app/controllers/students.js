@@ -1,9 +1,15 @@
-const { age, schooling, date } = require('../../lib/utils')
+const { age, date, yearCheck } = require('../../lib/utils')
+const Student = require('../models/Student')
 
 
 module.exports = {
     index(request, response) {
-        return response.render("students/index")
+
+        Student.all(function(students) {
+            return response.render("students/index", { students })
+
+
+        })
     },
     create(request, response) {
         return response.render("students/create")
@@ -17,13 +23,32 @@ module.exports = {
                 return response.send("Por favor, preencha todos os campos")
             }
         }
-        return
+
+        Student.create(request.body, function(student) {
+            return response.redirect(`/students/${student.id}`)
+
+        })
+
+
     },
     show(request, response) {
-        return
+        Student.find(request.params.id, function(student) {
+            if (!student) return response.send("Student not found!!!!")
+
+            student.birth_date = age(student.birth_date)
+
+            return response.render("students/show", { student })
+        })
     },
     edit(request, response) {
-        return
+        Student.find(request.params.id, function(student) {
+            if (!student) return response.send("Student not found!!!!")
+
+
+            student.birth_date = (date(student.birth_date)).iso
+
+            return response.render("students/edit", { student })
+        })
     },
     put(request, response) {
         const keys = Object.keys(request.body)
@@ -34,9 +59,17 @@ module.exports = {
                 return response.send("Por favor, preencha todos os campos")
             }
         }
-        return
+
+
+        Student.update(request.body, function() {
+            return response.redirect(`/students/${request.body.id}`)
+        })
+
+
     },
     delete(request, response) {
-        return
+        Student.delete(request.body.id, function() {
+            return response.redirect("/students/")
+        })
     },
 }

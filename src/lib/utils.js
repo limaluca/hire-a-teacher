@@ -25,7 +25,7 @@ module.exports = {
         return graduation;
     },
 
-    school_year(school_year) {
+    yearCheck(school_year) {
         let studentsYear = ""
         if (school_year == "five") studentsYear = "Quinto Ano"
         else if (school_year == "six") studentsYear = "Sexto Ano"

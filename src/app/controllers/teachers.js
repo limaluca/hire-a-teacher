@@ -70,6 +70,8 @@ module.exports = {
 
     },
     delete(request, response) {
-        return
+        Teacher.delete(request.body.id, function() {
+            return response.redirect("/teachers/")
+        })
     },
 }
