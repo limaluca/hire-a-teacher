@@ -51,7 +51,6 @@
                         <div>
                               <select name="school_year">
                                     <optgroup label="Ensino Fundamental">
-                                    
                                           <option value="five" {% if student.school_year=="five" %}selected
                                           {% endif %}>Quinto Ano</option>
                                           <option value="six" {% if student.school_year=="six" %}selected
@@ -84,6 +83,21 @@
                                     placeholder="Indique a quantidade de horas de aulas particulares que você quer ter por semana"
                                     value="{{student.study_hours}}">
                               </div>
+                  </div>
+
+
+                  <div class="item">
+                        <div>Professor</div>
+                        <div>
+                              <select name="teacher_id">
+                                    {% for teacher in teacherOptions %}
+                                    <option value="{{teacher.id}}" {% if student.teacher_id == teacher.id %}selected{% endif %}>
+                                          {{teacher.name}}
+                                    </option>  
+                                    {% endfor %}
+
+                              </select>
+                        </div>
                   </div>
                   
 

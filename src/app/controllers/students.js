@@ -12,7 +12,12 @@ module.exports = {
         })
     },
     create(request, response) {
-        return response.render("students/create")
+
+        Student.teachersSelectOptions(function(options) {
+
+            return response.render("students/create", { teacherOptions: options })
+
+        })
     },
     post(request, response) {
         const keys = Object.keys(request.body)
@@ -23,7 +28,7 @@ module.exports = {
                 return response.send("Por favor, preencha todos os campos")
             }
         }
-
+        let student = request.body.study_hours
         Student.create(request.body, function(student) {
             return response.redirect(`/students/${student.id}`)
 
@@ -47,7 +52,13 @@ module.exports = {
 
             student.birth_date = (date(student.birth_date)).iso
 
-            return response.render("students/edit", { student })
+            console.log(student.teacher_id);
+
+
+            Student.teachersSelectOptions(function(options) {
+                return response.render("students/edit", { student, teacherOptions: options })
+
+            })
         })
     },
     put(request, response) {
