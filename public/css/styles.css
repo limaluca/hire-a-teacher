@@ -172,6 +172,7 @@ a.button {
     text-align: center;
     text-decoration: none;
     width: 93.5%;
+    border-radius: 10px;
 }
 
 #form-delete button[type="submit"] {
@@ -256,4 +257,44 @@ td:last-child {
 .table-container>a {
     margin-bottom: 16px;
     display: inline-block;
+}
+
+
+/* Filters */
+
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.table-container .header a {
+    padding: 16px 32px;
+    background-color: var(--secondary-color);
+    width: 120px;
+    font-weight: bold;
+    color: #777;
+    font-size: 12px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+}
+
+.table-container .header form input {
+    border: 1px solid #eee;
+    padding: 4px 8px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.table-container .header form button {
+    margin-top: 0;
+    border-radius: 10px;
 }
