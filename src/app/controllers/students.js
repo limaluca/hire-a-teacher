@@ -5,11 +5,33 @@ const Student = require('../models/Student')
 module.exports = {
     index(request, response) {
 
-        Student.all(function(students) {
-            return response.render("students/index", { students })
+        let { filter, page, limit } = request.query
 
+        page = page || 1
+        limit = limit || 2
+        let offset = limit * (page - 1)
 
-        })
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(students) {
+
+                if (!students[0]) {
+                    return response.send("student not found")
+                }
+                const pagination = {
+                    total: Math.ceil(students[0].total / limit),
+                    page
+                }
+
+                return response.render("students/index", { students, filter, pagination })
+
+            }
+        }
+
+        Student.paginate(params)
     },
     create(request, response) {
 

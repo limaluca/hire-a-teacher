@@ -6,7 +6,18 @@
 
 {% block content %}
 <div class="card table-container animation-slow-up">
-      <a href="/students/create">Novo</a>
+    <div class="header">
+        <a href="/students/create">Novo</a>
+        <form action="/students" method="GET">
+            <input 
+            type="text"
+            name="filter"
+            placeholder="nome"
+            value={{filter}}
+            >
+            <button class="button" type="submit">Filtrar</button>
+        </form>
+    </div>
       <table width="100%">
         
         <thead>
@@ -35,6 +46,12 @@
 
       </table>
 
+      <div class="pagination"
+        data-page="{{pagination.page}}"
+        data-total="{{pagination.total}}"
+        data-filter="{{filter}}"
+      ></div>
+      
 </div>
 
 
