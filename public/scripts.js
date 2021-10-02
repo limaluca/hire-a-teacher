@@ -9,7 +9,7 @@ for (item of menuItems) {
     }
 }
 
-// Paginação
+// Pag
 function paginate(selectedPage, totalPages) {
 
     let pages = []
