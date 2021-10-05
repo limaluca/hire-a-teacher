@@ -1,0 +1,34 @@
+{% extends "layout.njk" %}
+
+
+
+{% block content %}
+    <div class="card">
+        <section class="avatar" style="background-image:url({{owner.avatar_url}})"></section>
+            <form method="POST" action="/owners?_method=PUT">
+                <section class="details">
+                    <h3>Detalhes</h3>
+                    {% include 'owners/fields.njk' %}
+                    <input type="hidden" name="id" value={{owner.id}}>
+            </form>
+
+            <form id="form-delete" method="POST" action="/owners?_method=DELETE">
+                    <input type="hidden" name="id" value={{owner.id}}>
+                    <button type="submit">Delete</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        const form = document.querySelector("#form-delete")
+        form.addEventListener("submit", (e)=>{
+            const confirmation = confirm("Confirma a exclusão?")
+            if(!confirmation){
+                e.preventDefault()
+            }
+        })
+    </script>
+
+    
+{% endblock %}
+

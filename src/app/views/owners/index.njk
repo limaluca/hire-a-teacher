@@ -1,0 +1,20 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    <div class="container">
+        <a href="/owners/create">criar</a>
+        {% for owner in owners %}
+            <div class="little-card">
+                <div class="card-avatar">
+                    <img src="{{owner.avatar_url}}" alt="animal photo">
+                </div>
+                <div class="card-details">
+                    <h2>{{owner.name}}</h2>
+                    <small>{{owner.size}}</small><br>
+                    <a href="owners/{{owner.id}}">Ver mais</a>
+                </div>
+            </div>  
+        {% endfor %}
+    </div>
+{% endblock %}
+

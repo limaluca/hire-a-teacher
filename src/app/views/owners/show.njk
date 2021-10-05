@@ -1,0 +1,44 @@
+{% extends "layout.njk" %}
+
+
+
+{% block content %}
+    <div class="card">
+        <section class="avatar" style="background-image:url(https://source.unsplash.com/collection/1925797/900x900)"></section>
+        <section class="details">
+            <h3>Detalhes</h3>
+            <div class="item">
+                <div>Nome</div>
+                <div>{{owner.name}}</div>
+            </div>
+            <div class="item">
+                <div>Espécie</div>
+                <div>{{owner.species}}</div>
+            </div>
+            <div class="item">
+                <div>Sexo</div>
+                <div>{{owner.sex}}</div>
+            </div>
+            <div class="item">
+                <div>Idade</div>
+                <div>{{owner.age}}</div>
+            </div>
+            <div class="item">
+                <div>Porte</div>
+                <div>{{owner.size}}</div>
+            </div>
+            <div class="item">
+                <div>Caracteristicas</div>
+                <div>
+                    
+                    {% for item in owner.highlights %}
+                        <span>{{item}}</span>
+                    {% endfor %}
+
+                </div>
+            </div>
+                <a href="/owners/{{owner.id}}/edit">Editar</a>
+        </section>
+    </div>
+{% endblock %}
+

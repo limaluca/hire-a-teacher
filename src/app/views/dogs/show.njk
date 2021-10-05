@@ -1,0 +1,44 @@
+{% extends "layout.njk" %}
+
+
+
+{% block content %}
+    <div class="card">
+        <section class="avatar" style="background-image:url(https://source.unsplash.com/collection/1925797/900x900)"></section>
+        <section class="details">
+            <h3>Detalhes</h3>
+            <div class="item">
+                <div>Nome</div>
+                <div>{{dog.name}}</div>
+            </div>
+            <div class="item">
+                <div>Espécie</div>
+                <div>{{dog.species}}</div>
+            </div>
+            <div class="item">
+                <div>Sexo</div>
+                <div>{{dog.sex}}</div>
+            </div>
+            <div class="item">
+                <div>Idade</div>
+                <div>{{dog.age}}</div>
+            </div>
+            <div class="item">
+                <div>Porte</div>
+                <div>{{dog.size}}</div>
+            </div>
+            <div class="item">
+                <div>Caracteristicas</div>
+                <div>
+                    
+                    {% for item in dog.highlights %}
+                        <span>{{item}}</span>
+                    {% endfor %}
+
+                </div>
+            </div>
+                <a href="/dogs/{{dog.id}}/edit">Editar</a>
+        </section>
+    </div>
+{% endblock %}
+

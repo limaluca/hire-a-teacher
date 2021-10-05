@@ -1,35 +1,43 @@
 const express = require('express');
 const routes = express.Router();
-const teachers = require('./app/controllers/teachers')
-const students = require('./app/controllers/students')
+const dogs = require('./app/controllers/dogs')
+const owners = require('./app/controllers/owners')
+
+routes.get("/", dogs.index)
+
+routes.get("/dogs", dogs.index)
+
+routes.get("/dogs/create", dogs.create)
+
+routes.get("/dogs/:id", dogs.show)
+
+routes.get("/dogs/:id/edit", dogs.edit)
+
+routes.post("/dogs", dogs.post)
+
+routes.put("/dogs", dogs.put)
+
+routes.delete("/dogs", dogs.delete)
 
 
 
+routes.get("/", function(req,res){
+    return res.render("layout")
+})
 
-// Teachers Routes
-routes.get("/", teachers.index)
-routes.get("/teachers", teachers.index)
-routes.get("/teachers/create", teachers.create)
-routes.post("/teachers", teachers.post)
-routes.get("/teachers/:id", teachers.show)
-routes.get("/teachers/:id/edit", teachers.edit)
-routes.put("/teachers", teachers.put)
-routes.delete("/teachers", teachers.delete)
+routes.get("/owners", owners.index)
 
+routes.get("/owners/create", owners.create)
 
+routes.get("/owners/:id", owners.show)
 
+routes.get("/owners/:id/edit", owners.edit)
 
-// Students Routes
-routes.get("/", students.index)
-routes.get("/students", students.index)
-routes.get("/students/create", students.create)
-routes.post("/students", students.post)
-routes.get("/students/:id", students.show)
-routes.get("/students/:id/edit", students.edit)
-routes.put("/students", students.put)
-routes.delete("/students", students.delete)
+routes.post("/owners", owners.post)
 
+routes.put("/owners", owners.put)
 
+routes.delete("/owners", owners.delete)
 
 
 module.exports = routes;
