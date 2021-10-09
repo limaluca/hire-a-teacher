@@ -1,3 +1,4 @@
+//Pool is a way to create and test connections with a DB without worrying about credentials
 const { Pool } = require("pg")
 
 module.exports = new Pool({
@@ -5,7 +6,7 @@ module.exports = new Pool({
     password:"",
     host:"localhost",
     port:"5432",
-    database:"animalsdb"
+    database:"adoptiondb"
 
 })
 
