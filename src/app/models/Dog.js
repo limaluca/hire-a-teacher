@@ -3,10 +3,8 @@ const db = require("../../config/db")
 module.exports = {
     all(callback){
         db.query(`SELECT * FROM dogs`, function(err,results){
-            if(err){
-                console.log("index: Database error!")
-                return
-            }
+            if(err) throw `index: Database error! ${err}`
+         
             callback(results.rows)
         })
 
@@ -39,11 +37,10 @@ module.exports = {
         db.query(query,values, function(err,results) {
             console.log(err)
             console.log(results)
-            if (err){
-                console.log("Database error!")
-                return
-            }
-            callback(results.rows[0])
+
+            if(err) throw `create: Database error! ${err}`
+            
+            return callback(results.rows[0])
         })
 
     },
@@ -53,7 +50,7 @@ module.exports = {
                 console.log("Find: Database error!")
                 return
             }
-            callback(results.rows[0])
+            return callback(results.rows[0])
         })
     },
     update(data,callback){
@@ -82,12 +79,17 @@ module.exports = {
         db.query(query,values,function(err,results){
             console.log(err)
             console.log(results)
-            if (err){
-                console.log("Database error!")
-                return
-            }
-            callback()
+            if(err) throw `index: Database error! ${err}`
+
+            return callback()
         })
 
+    },
+    delete(id,callback){
+        db.query(`DELETE FROM dogs WHERE id=$1`, [id], function(err,results){
+            if(err) throw `index: Database error! ${err}`
+            
+            return callback()
+        })
     }
 }

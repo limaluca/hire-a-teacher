@@ -46,6 +46,8 @@ module.exports={
         })
     },
     delete(req,res){
-        return
+        Dog.delete(req.body.id,function(){
+            return res.redirect("/dogs")
+        })
     }
 }
