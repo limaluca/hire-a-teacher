@@ -1,8 +1,12 @@
-
+const Owner = require("../models/Owner")
 
 module.exports={
     index(req,res){
-        return res.render("owners/index")
+
+        Owner.all(function(owners){
+            return res.render("owners/index", { owners })
+        })
+        
     },
     create(req,res){
         return res.render("owners/create")
@@ -15,19 +19,35 @@ module.exports={
                     return res.send("Fill all the fields!")
                 }
             }
-        let {avatar_url, name, species, sex, age, size, highlights} = req.body;
-        return
+        
+        Owner.create(req.body, function(owner){
+            return res.redirect(`owners/${owner.id}`)
+        })
     },
     show(req,res){
-        return
+        Owner.find(req.params.id, function(owner){
+            if(!owner) return res.send("Owner not found!")
+
+            owner.highlights = owner.highlights.split(",")
+            return res.render("owners/show", {owner})
+        })
     },
     edit(req,res){
-        return
+        Owner.find(req.params.id, function(owner){
+            if(!owner) return res.send("Owner not found!")
+
+            owner.highlights = owner.highlights.split(",")
+            return res.render("owners/edit", {owner})
+        })
     },
     put(req,res){
-        return
+        Owner.update(req.body, function(){
+            return res.redirect(`owners/${req.body.id}`)
+        })
     },
     delete(req,res){
-        return
+        Owner.delete(req.body.id,function(){
+            return res.redirect("/owners")
+        })
     }
 }

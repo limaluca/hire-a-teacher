@@ -4,40 +4,40 @@
 
 {% block content %}
     <div class="card">
-        <section class="avatar" style="background-image:url({{owner.avatar_url}})"></section>
+        <section class="avatar" style="background-image:url({{animal.avatar_url}})"></section>
         <section class="details">
             <h3>Detalhes</h3>
             <div class="item">
                 <div>Nome</div>
-                <div>{{owner.name}}</div>
+                <div>{{animal.name}}</div>
             </div>
             <div class="item">
                 <div>Espécie</div>
-                <div>{{owner.species}}</div>
+                <div>{{animal.species}}</div>
             </div>
             <div class="item">
                 <div>Sexo</div>
-                <div>{{owner.sex}}</div>
+                <div>{{animal.sex}}</div>
             </div>
             <div class="item">
                 <div>Idade</div>
-                <div>{{owner.age}}</div>
+                <div>{{animal.age}}</div>
             </div>
             <div class="item">
                 <div>Porte</div>
-                <div>{{owner.size}}</div>
+                <div>{{animal.size}}</div>
             </div>
             <div class="item">
                 <div>Caracteristicas</div>
                 <div>
                     
-                    {% for item in owner.highlights %}
+                    {% for item in animal.highlights %}
                         <span>{{item}}</span>
                     {% endfor %}
 
                 </div>
             </div>
-                <a href="/owners/{{owner.id}}/edit">Editar</a>
+                <a href="/animals/{{animal.id}}/edit">Editar</a>
         </section>
     </div>
 {% endblock %}

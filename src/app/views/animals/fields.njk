@@ -1,0 +1,70 @@
+            <div class="item">
+                <div>Foto Principal</div>
+                <input value="{{animal.avatar_url}}" type="url" name="avatar_url" placeholder="Informe o link de uma foto do bichinho"></input>
+            </div>
+            <div class="item">
+                <div>Nome</div>
+                <input name="name" type="text"  placeholder="Informe um nome" value="{{animal.name}}"></input>
+            </div>
+            <div class="item">
+                <div>Espécie</div>
+                <select name="species">
+                    <option value="cat" {% if animal.species == 'cat' %}
+                    selected
+                {% endif %}>Gatinho</option>
+                    <option value="animal"{% if animal.species == 'animal' %}
+                    selected
+                {% endif %}>Cãozinho</option>
+                </select>
+            </div>
+            <div class="item">
+                <div>Sexo</div>
+                
+                <select name="sex">
+                    <option value="male" {% if animal.sex == 'male' %}
+                    selected
+                {% endif %}>Macho</option>
+                    <option value="female"{% if animal.sex == 'female' %}
+                    selected
+                {% endif %}>Femea</option>
+                </select>
+            </div>
+            <div class="item">
+                <div>Idade</div>
+                <select name="age">
+                    <option value="puppy"{% if animal.age == 'puppy' %}
+                    selected
+                {% endif %}>Menos de um ano</option>
+                    <option value="child"{% if animal.age == 'child' %}
+                    selected
+                {% endif %}>Até 2 anos</option>
+                    <option value="adult"{% if animal.age == 'adult' %}
+                    selected
+                {% endif %}>Até 5 anos</option>
+                    <option value="senior"{% if animal.age == 'senior' %}
+                    selected
+                {% endif %}>Até 10 anos</option>
+                </select>
+            </div>
+            <div class="item">
+                <div>Porte</div>
+                    <input type="radio" name="size" value="short" {% if animal.size == 'short' %}
+                    checked
+                {% endif %}>
+                    <label for="short">Porte</label>      
+                    <input type="radio" name="size" value="medium"{% if animal.size == 'medium' %}
+                    checked
+                {% endif %}>
+                    <label for="medium">Médio</label>      
+                    <input type="radio" name="size" value="big"{% if animal.size == 'big' %}
+                    checked
+                {% endif %}>
+                    <label for="big">Grande</label>            
+            </div>
+            <div class="item">
+                <div>Caracteristicas</div>
+                <input value="{{animal.highlights}}" name="highlights" type="text" placeholder="Informe as caracteristicas separando por vírgula">                 
+            </div>
+
+            <button type="submit">Salvar</button>
+            

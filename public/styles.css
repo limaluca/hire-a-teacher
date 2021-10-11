@@ -155,7 +155,7 @@ h3{
 }
 .little-card{
         width: 250px;
-        height: 350px;
+        max-height: 400px;
         margin: 8px;
         background-color: var(--secondary-color);
         box-shadow: 0 4px 5px rgba(0, 0, 0, 0.7);
@@ -168,6 +168,7 @@ h3{
 
 .card-avatar{
     width:100%;
+    overflow: hidden;
 }
 
 .card-avatar img{
