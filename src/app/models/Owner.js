@@ -68,7 +68,8 @@ module.exports = {
             data.name,
             data.sex,
             data.phone,
-            data.highlights
+            data.highlights,
+            data.id
         ]
 
         db.query(query,values,function(err,results){

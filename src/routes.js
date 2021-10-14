@@ -46,7 +46,10 @@ routes.post("/animals", animals.post)
 
 routes.put("/animals", animals.put)
 
-// routes.delete("/animals", animals.delete)
+routes.delete("/animals", animals.delete)
+
+
+
 
 // routes.get("/", dogs.index)
 
