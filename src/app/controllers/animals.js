@@ -9,7 +9,9 @@ module.exports={
         
     },
     create(req,res){
-        return res.render("animals/create")
+        Animal.ownersSelectOptions(function(options){
+            return res.render("animals/create", {ownerOptions: options})
+        })
 
     },
     post(req,res){
@@ -37,7 +39,9 @@ module.exports={
             if(!animal) return res.send("Animal not found!")
 
             animal.highlights = animal.highlights.split(",")
-            return res.render("animals/edit", {animal})
+            Animal.ownersSelectOptions(function(options){
+                return res.render("animals/edit", {animal, ownerOptions:options})
+            })
         })
     },
     put(req,res){

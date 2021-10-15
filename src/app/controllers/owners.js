@@ -6,6 +6,8 @@ module.exports={
         Owner.all(function(owners){
             return res.render("owners/index", { owners })
         })
+
+        
         
     },
     create(req,res){

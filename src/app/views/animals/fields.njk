@@ -66,5 +66,14 @@
                 <input value="{{animal.highlights}}" name="highlights" type="text" placeholder="Informe as caracteristicas separando por vírgula">                 
             </div>
 
+            <div class="item">
+                <div>Futuro dono:</div>
+                <select name="owner">
+                    {% for owner in ownerOptions %}
+                    <option value="{{owner.id}}" {% if animal.owner_id == owner.id %} selected {% endif %}>{{owner.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
             <button type="submit">Salvar</button>
             
