@@ -2,10 +2,18 @@ const Animal = require("../models/Animal")
 
 module.exports={
     index(req,res){
+        const { filter } = req.query
+        if (filter){
+            Animal.findBy(filter, function(animals){
+                return res.render("animals/index", { animals })
+            })
+        } else {
+            Animal.all(function(animals){
+                return res.render("animals/index", { animals })
+            })
+        }
 
-        Animal.all(function(animals){
-            return res.render("animals/index", { animals })
-        })
+
         
     },
     create(req,res){

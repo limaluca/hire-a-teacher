@@ -2,7 +2,13 @@
 
 {% block content %}
     <div class="container">
-        <a href="/animals/create">Criar</a>
+            <div class="header">
+                <a href="/animals/create">Criar</a>
+                <form action="/animals" method="GET">
+                    <input type="text" name="filter" placeholder="Busque digitando.."> 
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
         {% for animal in animals %}
             <div class="little-card">
                 <div class="card-avatar">

@@ -2,7 +2,14 @@
 
 {% block content %}
     <div class="container">
-        <a href="/owners/create">criar</a>
+        <div class="header">
+            <a href="/owners/create">criar</a>
+            <form action="/owners" method="GET">
+                <input type="text" name="filter" placeholder="Busquer digitando.."> 
+                <button type="submit">Buscar</button>
+            </form>
+
+        </div>
         {% for owner in owners %}
             <div class="little-card">
                 <div class="card-avatar">

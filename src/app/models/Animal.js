@@ -58,6 +58,16 @@ module.exports = {
             return callback(results.rows[0])
         })
     },
+    findBy(filter,callback){
+        db.query(`SELECT * FROM animals 
+        WHERE animals.name ILIKE '%${filter}%'
+        OR animals.highlights ILIKE '%${filter}%'`, 
+        function(err,results){
+            if(err) throw `index: Database error! ${err}`
+         
+            callback(results.rows)
+        })
+    },
     update(data,callback){
         const query =`
             UPDATE animals SET 

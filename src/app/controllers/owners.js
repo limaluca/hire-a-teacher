@@ -2,10 +2,18 @@ const Owner = require("../models/Owner")
 
 module.exports={
     index(req,res){
-
-        Owner.all(function(owners){
-            return res.render("owners/index", { owners })
-        })
+        const {filter} = req.query
+        
+        if (filter){
+            Owner.findBy(filter, function(owners){
+                return res.render("owners/index", { owners })
+            })
+        } else {
+            Owner.all(function(owners){
+                return res.render("owners/index", { owners })
+            })
+        }
+    
 
         
         

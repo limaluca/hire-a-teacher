@@ -52,6 +52,18 @@ module.exports = {
             return callback(results.rows[0])
         })
     },
+    findBy(filter,callback){
+        db.query(`SELECT owners.* , COUNT(animals) AS total_Animals
+        FROM owners
+        LEFT JOIN animals ON (animals.owner_id = owners.id)
+        WHERE owners.name ILIKE '%${filter}%'
+        OR owners.highlights ILIKE '%${filter}%'
+        GROUP BY owners.id`, function(err,results){
+            if(err) throw `index: Database error! ${err}`
+
+            callback(results.rows)
+        })
+    },
     update(data,callback){
         const query =`
             UPDATE owners SET 
